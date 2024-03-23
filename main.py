@@ -136,14 +136,14 @@ count_vect = CountVectorizer(analyzer='word', token_pattern=r'\w{1,}', max_featu
 count_vect.fit(trainDF['text'])
 xtrain_count = count_vect.transform(train_data)  # 训练集特征向量
 xtest_count = count_vect.transform(test_data)  # 测试集特征向量
-# 4.2 TF-IDF特征向量
-# sklearn.feature_extraction.text.TfidfVectorizer
-# 4.2.1 词语级
-tfidf_vect = TfidfVectorizer(analyzer='word', token_pattern=r'\w{1,}', max_features=5000)
-# 4.2.2 多词语级
-tfidf_vect_ngram = TfidfVectorizer(analyzer='word', token_pattern=r'\w{1,}', ngram_range=(2, 3), max_features=5000)
-# 4.2.3 词性级
-tfidf_vect_char = TfidfVectorizer(analyzer='char', ngram_range=(2, 3), max_features=5000)
+# # 4.2 TF-IDF特征向量
+# # sklearn.feature_extraction.text.TfidfVectorizer
+# # 4.2.1 词语级
+# tfidf_vect = TfidfVectorizer(analyzer='word', token_pattern=r'\w{1,}', max_features=5000)
+# # 4.2.2 多词语级
+# tfidf_vect_ngram = TfidfVectorizer(analyzer='word', token_pattern=r'\w{1,}', ngram_range=(2, 3), max_features=5000)
+# # 4.2.3 词性级
+# tfidf_vect_char = TfidfVectorizer(analyzer='char', ngram_range=(2, 3), max_features=5000)
 
 # 分类任务
 # 创建分类器
@@ -162,15 +162,19 @@ def train_model(classifier, train_feature, test_feature):
 # Sklearn.naive_bayes
 accuracy, precision, recall, f1_socre = train_model(naive_bayes.MultinomialNB(), xtrain_count, xtest_count)
 print("NB, Count Vectors: ", accuracy)
-# # 5.2 朴素贝叶斯伯努利模型
-# # 5.2.1 计数特征向量
-# accuracy, = train_model(naive_bayes.BernoulliNB(), xtrain_count, xtest_count)
-# # # 5.3 SVM
-# # # 5.3.1 计数特征向量 sklearn.svm
-# # accuracy, … = train_model(svm.SVC(), xtrain_count, xtest_count)
-# # # 5.4 随机森林 sklearn.ensemble
-# # # 5.4.1 计数特征向量
-# # accuracy, … = train_model(ensemble.RandomForestClassifier(), xtrain_count, xtest_count)
-# # # 5.5 KNN sklearn.neighbors
-# # # 5.5.1 计数特征向量
-# # accuracy, … = train_model(neighbors.KNeighborsClassifier, xtrain_count, xtest_count)
+
+# 5.2 朴素贝叶斯伯努利模型
+# 5.2.1 计数特征向量
+accuracy, precision, recall, f1_socre = train_model(naive_bayes.BernoulliNB(), xtrain_count, xtest_count)
+
+# 5.3 SVM
+# 5.3.1 计数特征向量 sklearn.svm
+accuracy, precision, recall, f1_socre = train_model(svm.SVC(), xtrain_count, xtest_count)
+
+# 5.4 随机森林 sklearn.ensemble
+# 5.4.1 计数特征向量
+accuracy, precision, recall, f1_socre = train_model(ensemble.RandomForestClassifier(), xtrain_count, xtest_count)
+
+# 5.5 KNN sklearn.neighbors
+# 5.5.1 计数特征向量
+accuracy, precision, recall, f1_socre = train_model(neighbors.KNeighborsClassifier, xtrain_count, xtest_count)
