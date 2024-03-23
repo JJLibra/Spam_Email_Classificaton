@@ -169,12 +169,15 @@ accuracy, precision, recall, f1_socre = train_model(naive_bayes.BernoulliNB(), x
 
 # 5.3 SVM
 # 5.3.1 计数特征向量 sklearn.svm
+from sklearn import svm
 accuracy, precision, recall, f1_socre = train_model(svm.SVC(), xtrain_count, xtest_count)
 
 # 5.4 随机森林 sklearn.ensemble
 # 5.4.1 计数特征向量
+from sklearn import ensemble
 accuracy, precision, recall, f1_socre = train_model(ensemble.RandomForestClassifier(), xtrain_count, xtest_count)
 
 # 5.5 KNN sklearn.neighbors
 # 5.5.1 计数特征向量
-accuracy, precision, recall, f1_socre = train_model(neighbors.KNeighborsClassifier, xtrain_count, xtest_count)
+from sklearn import neighbors
+accuracy, precision, recall, f1_socre = train_model(neighbors.KNeighborsClassifier(), xtrain_count, xtest_count)
