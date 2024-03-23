@@ -17,6 +17,7 @@ INDEX_PATH = os.path.join('trec07p', 'delay', 'index')  # 先使用较小的数�
 DATA_PATH = os.path.join('trec07p', 'data')  # 数据文件夹路径
 labels = []
 filenames = []
+
 def create_dataset(index_path):
     with open(index_path) as f:
         while True:
@@ -27,12 +28,14 @@ def create_dataset(index_path):
             labels.append(line[0])
             filenames.append(line[1].strip('\n').split('/')[-1])
 
+
 create_dataset(INDEX_PATH)
 
 
 def load_email(filename, file_path):
     with open(os.path.join(file_path, filename), 'rb') as f:
         return parser.BytesParser(policy=policy.default).parse(f)
+
 
 raw_emails = [load_email(name, DATA_PATH) for name in filenames]
 
@@ -171,5 +174,3 @@ print(raw_emails[1].get_content().strip())  # 打印邮件文本内容
 # # # 5.5 KNN sklearn.neighbors
 # # # 5.5.1 计数特征向量
 # # accuracy, … = train_model(neighbors.KNeighborsClassifier, xtrain_count, xtest_count)
-
-
