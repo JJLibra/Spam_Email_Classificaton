@@ -1,6 +1,9 @@
 # 🤖 Spam_Email_Classificaton
 
-Machine Learning——垃圾邮件过滤
+Traditional machine learning
 
-Downloding......
+## Bayesian theory
+
+P(A│B)=(P(B│A)·P(A))/P(B) ，P(B)≠0
+
 
