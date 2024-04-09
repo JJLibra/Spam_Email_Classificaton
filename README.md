@@ -12,7 +12,7 @@ P(C│F_1,F_2,…,F_n )=(∏P(F_i│C)·P(C))/(P(F_1 )·P(F_2 )·…·P(F_n ) )�
 
 ## Polynomial Naive Bayes Model
 
-### Accuracy&Precision&Recall&F1 Score
+### Accuracy & Precision & Recall & F1 Score
 
 | Metric    | Value  |
 |-----------|--------|
