@@ -6,4 +6,4 @@ Traditional machine learning
 
 P(A│B)=(P(B│A)·P(A))/P(B) ，P(B)≠0
 
-
+![混淆矩阵](./img/MulNB1.png) ![学习曲线](./img/MulNB4.png)
