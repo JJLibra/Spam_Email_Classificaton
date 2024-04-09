@@ -1,6 +1,6 @@
 # 🤖 Spam_Email_Classificaton
 
-Traditional machine learning
+## Traditional machine learning
 
 ## Bayesian theory
 
