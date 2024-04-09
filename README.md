@@ -7,6 +7,7 @@ Traditional machine learning
 P(A│B)=(P(B│A)·P(A))/P(B) ，P(B)≠0
 
 After introducing the naive assumption：
+
 P(C│F_1,F_2,…,F_n )=(∏P(F_i│C)·P(C))/(P(F_1 )·P(F_2 )·…·P(F_n ) )∝P(C)∏P(F_i│C)，i=1,2,…,n
 
 ## Polynomial Naive Bayes Model
